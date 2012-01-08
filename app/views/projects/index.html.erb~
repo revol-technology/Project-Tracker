@@ -1,0 +1,4 @@
+<%= render"listing"%>
+<%= link_to 'New project', new_project_path %>
+<br />
+<%= link_to "Employee Detail", persons_path %>

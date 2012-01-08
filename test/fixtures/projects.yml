@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  client: MyString
+  cost: 1
+  starting_date: 2012-01-01
+  ending_date: 2012-01-01
+
+two:
+  name: MyString
+  client: MyString
+  cost: 1
+  starting_date: 2012-01-01
+  ending_date: 2012-01-01
