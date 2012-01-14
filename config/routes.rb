@@ -1,9 +1,7 @@
 Pm::Application.routes.draw do
-
-
-
  resources :projects
  resources :people
+ resources :teams
 
 
   # The priority is based upon order of creation:

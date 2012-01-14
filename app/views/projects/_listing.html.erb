@@ -7,6 +7,7 @@
     <th>Ending Date</th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
 <% @projects.each do |project| %>
   <tr>
@@ -15,7 +16,13 @@
     <td><%= project.cost %></td>
     <td><%= project.starting_date %></td>
     <td><%= project.ending_date %></td>
-
+    <td>
+    <%if project.team.nil?%>
+    <%= link_to "Assign Team", new_team_path %>
+    <% else  %>
+    <%= link_to "Team", team_path(project.team.id) %>
+    <% end %>
+    </td>
     <td><%= link_to "Edit", edit_project_path(project.id) %></td>
     <td><%= link_to "Delete", project, :confirm=>"Are You Sure?", :method=> :delete %></td>
   </tr>

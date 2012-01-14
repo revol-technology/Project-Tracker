@@ -4,6 +4,7 @@ class CreateProjects < ActiveRecord::Migration
       t.string :name
       t.string :client
       t.integer :cost
+
       t.date :starting_date
       t.date :ending_date
 
