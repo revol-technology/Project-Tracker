@@ -1,2 +1,12 @@
 <h1>Teams#show</h1>
 <p>Find me in app/views/teams/show.html.erb</p>
+
+<% if @team.people.empty? %>
+<%= "NO PERSON ASSIGNED TO THIS PROJECT"%>
+<% else %>
+  <% @team.people.each do |person| %>
+  <%= person.name%>
+  <% end %>
+<% end %>
+
+<%= link_to("Add another Person to this team.", edit_team_path(@team.id))%>

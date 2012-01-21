@@ -17,11 +17,13 @@
     <td><%= project.starting_date %></td>
     <td><%= project.ending_date %></td>
     <td>
+
     <%if project.team.nil?%>
-    <%= link_to "Assign Team", new_team_path %>
+      <%= link_to "Assign Team", new_project_team_path(project.id) %>
     <% else  %>
-    <%= link_to "Team", team_path(project.team.id) %>
+      <%= link_to "Team", project_teams_path(project.team.id) %>
     <% end %>
+
     </td>
     <td><%= link_to "Edit", edit_project_path(project.id) %></td>
     <td><%= link_to "Delete", project, :confirm=>"Are You Sure?", :method=> :delete %></td>

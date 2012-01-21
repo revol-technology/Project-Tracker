@@ -1,1 +1,16 @@
-<%=render 'form'%>
+<%= form_for :team, :url => { :action => "create" } do |f| %>
+<table >
+  <% @people.each do |p|%>
+   <tr>
+    <td>
+      <%= check_box_tag("team[#{p.name}]",p.id) %>
+     </td>
+     <td>
+      <%= label_tag(p.name, p.name) %>
+     </td>
+ </tr>
+<% end %>
+
+</table>
+<%=f.submit %>
+<% end %>
