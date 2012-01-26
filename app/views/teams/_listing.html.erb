@@ -1,21 +1,14 @@
 <table>
   <tr>
-    <th>Project Name</th>
-    <th>Team Member</th>
-    <th></th>
-    <th></th>
+    <th>Team Members</th>
   </tr>
-<% @teams.each do |team| %>
+<% @project.team.people.each do |person| %>
   <tr>
-    <td><%= team.project.name %></td>
     <td>
-    <% team.people.each do |p|  %>
-    <%= p.name%>
-    <%end%>
+    <%= person.name %>
     </td>
-
-    <td><%= link_to "Edit", edit_project_path(team.project.id) %></td>
-    <td><%= link_to "Delete", project_path(team.project.id), :confirm=>"Are You Sure?", :method=> :delete %></td>
+    <td><%= link_to "Edit", edit_project_team_path(@project.id,@project.team.id) %></td>
+    <td><%= link_to "Delete", project_path(@project.team.project.id), :confirm=>"Are You Sure?", :method=> :delete %></td>
   </tr>
 <% end %>
 </table>

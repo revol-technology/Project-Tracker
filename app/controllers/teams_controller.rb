@@ -1,8 +1,6 @@
 class TeamsController < ApplicationController
   def index
-
-  @teams = Team.all
-
+  @project = Project.find(params[:project_id])
   end
 
   def edit
@@ -21,10 +19,11 @@ class TeamsController < ApplicationController
   end
 
   def update
+  binding.pry
   @team = Team.find(params[:id])
-  @team.save!
   @team.update_attributes(params[:team])
-  redirect_to (teams_path)
+  @team.save!
+  redirect_to projects_path
   end
 
   def destroy

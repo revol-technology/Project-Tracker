@@ -21,7 +21,7 @@
     <%if project.team.nil?%>
       <%= link_to "Assign Team", new_project_team_path(project.id) %>
     <% else  %>
-      <%= link_to "Team", project_teams_path(project.team.id) %>
+      <%= link_to "Team", project_teams_path(project.id) %>
     <% end %>
 
     </td>
