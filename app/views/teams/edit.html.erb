@@ -1,1 +1,21 @@
-<%= render "form"%>
+<%= form_for :team, :url => { :action => "create" } do |f| %>
+<table >
+  <% @people.each do |p|%>
+   <tr>
+    <td>
+    <% if @project.team.id == p.team_id %>
+      <%= check_box_tag("team[#{p.name}]","on",p.id) %>
+      <% else %>
+        <%= check_box_tag("team[#{p.name}]",p.id) %>
+      <% end %>
+     </td>
+     <td>
+      <%= label_tag(p.name, p.name) %>
+     </td>
+ </tr>
+<% end %>
+
+</table>
+<%=f.submit %>
+<% end %>
+<%= link_to "Back" , project_teams_path %>

@@ -7,9 +7,9 @@
     <td>
     <%= person.name %>
     </td>
-    <td><%= link_to "Edit", edit_project_team_path(@project.id,@project.team.id) %></td>
-    <td><%= link_to "Delete", project_path(@project.team.project.id), :confirm=>"Are You Sure?", :method=> :delete %></td>
+
   </tr>
 <% end %>
 </table>
 <br />
+<%= link_to "Edit", edit_project_team_path(@project.id,@project.team.id) %><br />

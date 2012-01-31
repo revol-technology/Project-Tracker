@@ -4,6 +4,7 @@ class TeamsController < ApplicationController
   end
 
   def edit
+  @project = Project.find(params[:project_id])
   @team = Team.find(params[:id])
   @people = Person.all
   end
@@ -19,7 +20,6 @@ class TeamsController < ApplicationController
   end
 
   def update
-  binding.pry
   @team = Team.find(params[:id])
   @team.update_attributes(params[:team])
   @team.save!
